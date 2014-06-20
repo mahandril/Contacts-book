@@ -1,0 +1,48 @@
+<h1>Displaying the details</h1>
+<p>
+  <%
+=begin %>
+  setting image from the source public/data and its height and width are specified
+<%
+=end %>
+  <strong>Image:</strong> <br>
+  <img src="/data/<%= @contact.Image %>" width="100" height = "150"/><br>
+</p>
+
+ <%
+=begin %>
+  to display the fields of the particular contact, instance_variable.fieldname(@contact.firstname) is used and &nbsp is used for spacing 
+<%
+=end %>
+<p>
+  <strong>First Name:</strong> 
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= @contact.FirstName %><br>
+</p>
+
+<p>
+  <strong>Last Name:</strong> 
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= @contact.LastName %><br>
+</p>
+
+<p>
+  <strong>Email Id:</strong> 
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= @contact.EmailId %><br>
+</p>
+
+<p>
+  <strong>Mobile Number:</strong> 
+  <%= @contact.MobileNumber%><br>
+</p>
+
+<p>
+  <strong>Address:</strong> 
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= @contact.Address %><br>
+</p>
+
+<br><br>
+<%= link_to 'List Contacts', contacts_path %>
+

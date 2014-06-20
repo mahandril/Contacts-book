@@ -1,0 +1,49 @@
+<h1> New Contact </h1>
+<%
+=begin %>
+creating form ,with labels and the type of fields
+<%
+=end %>
+
+  <%= form_for :contact,url: contacts_path do |f| %>
+  <p>
+    <%= f.label :First_Name %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_field :FirstName%>
+  </p>
+ 
+  <p>
+    <%= f.label :Last_Name %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_field :LastName %>
+  </p>
+  
+  <p>
+    <%= f.label :Email_Id %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_field :EmailId %>
+  </p>
+  
+  <p>
+    <%= f.label :MobileNumber %>
+    <%= f.text_field :MobileNumber %>
+  </p>
+
+  <p>
+    <%= f.label :Address %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_area :Address %>
+  </p>
+  
+  <p>
+    <%= f.label :Image %>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.file_field :Image %>
+  </p><br>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<br>
+<%= link_to 'List contacts', contacts_path %>

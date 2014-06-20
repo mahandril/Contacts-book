@@ -1,0 +1,28 @@
+<h1> New Contact </h1>
+<%= form_for :contact,url: contacts_path do |f| %>
+  <p>
+    <%= f.label :First_Name%>
+    <%= f.text_field :FirstName%>
+  </p>
+ 
+  <p>
+    <%= f.label :Last_Name %>
+    <%= f.text_field :LastName %>
+  </p>
+<p>
+    <%= f.label :Email_Id %>
+    <%= f.text_field :EmailId %>
+  </p>
+<p>
+    <%= f.label :Mobile_Number %>
+    <%= f.text_field :MobileNumber %>
+  </p>
+<p>
+    <%= f.label :Address %>
+    <%= f.text_area :Address %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'List contacts', contacts_path %>
