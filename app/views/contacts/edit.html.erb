@@ -1,10 +1,17 @@
 <h1>Editing contact</h1>
  
 <%= form_for :contact, url: contact_path(@contact), method: :patch do |f| %>
+<!--checking for error in the form if any error will display the error message -->
   <% if @contact.errors.any? %>
   
   <div id="error_explanation">
-    <h2>Error</h2>
+    <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+    <ul>
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+    
   </div>
   
   <% end %>
@@ -45,4 +52,4 @@
 
 <% end %>
  
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'List Contact', contacts_path %>

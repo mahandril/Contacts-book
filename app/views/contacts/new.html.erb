@@ -6,6 +6,17 @@ creating form ,with labels and the type of fields
 =end %>
 
   <%= form_for :contact,url: contacts_path do |f| %>
+  <% if @contact.errors.any? %><!--checking for error if any error will display the corresponding error message -->
+  <div id="error_explanation">
+    <h2><%= pluralize(@contact.errors.count, "error") %> prohibited
+      this contact from being saved:</h2>
+    <ul>
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
   <p>
     <%= f.label :First_Name %>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
